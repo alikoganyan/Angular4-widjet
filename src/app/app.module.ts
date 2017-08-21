@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { YourContactsComponent } from './your-contacts/your-contacts.component';
 import { ServicesSelectionComponent } from './services-selection/services-selection.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     YourContactsComponent,
-    ServicesSelectionComponent
+    ServicesSelectionComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule
