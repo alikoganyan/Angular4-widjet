@@ -6,6 +6,7 @@ import { TownSelectionComponent } from './town-selection/town-selection.componen
 import { SalonListComponent } from './salon-list/salon-list.component';
 import { SelectSpecialistComponent } from './select-specialist/select-specialist.component';
 import { RecordInfoComponent } from './record-info/record-info.component';
+import { DateTimeComponent } from './date-time/date-time.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RecordInfoComponent } from './record-info/record-info.component';
     TownSelectionComponent,
     SalonListComponent,
     SelectSpecialistComponent,
-    RecordInfoComponent
+    RecordInfoComponent,
+    DateTimeComponent
   ],
   imports: [
     BrowserModule
