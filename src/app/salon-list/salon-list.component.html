@@ -1,7 +1,7 @@
 <div class="avisits-basic_background">
   <div class="avisits-main_block">
     <div class="avisits-main_title">
-        <a class="avisits-arrow_back" href="#"></a>
+        <a class="avisits-arrow_back" (click)="onpreview('town_selection')"></a>
           <p>Выбор салонов</p>
           <a class="avisits-close" href="#"></a>
       </div>
@@ -127,7 +127,7 @@
                           <li>
                               <a class="mega__trigger" data-mega="#point4" href="#">
                                   <div class="avisits-img">
-                                      <div></div>	
+                                      <div></div>
                                       <img src="assets/images/salon_box/img4.jpg" alt="">
                                   </div>
                                   <div class="avisits-text">
@@ -166,7 +166,7 @@
              </div>
         </div>
           <div class="avisits-salon_buttons">
-            <a href="#">Продолжить</a>
+            <a (click)="onNext('services_selection')">Продолжить</a>
           </div>
       </div>
   </div>

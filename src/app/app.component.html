@@ -1,11 +1,40 @@
-<!--<app-your-contacts></app-your-contacts>-->
-<!--<app-town-selection></app-town-selection>-->
-<!--<app-salon-list></app-salon-list>-->
+<app-your-contacts
+  *ngIf="status === 'your_contacts'"
+  (town_selection)="town_selection($event)"
+></app-your-contacts>
 
-<!--<app-services-selection></app-services-selection>-->
-<!--<app-services></app-services>-->
+<app-town-selection
+  *ngIf="status === 'town_selection'"
+  (salon_list)="salon_list($event)"
+></app-town-selection>
+
+<app-salon-list
+  *ngIf="status === 'salon_list'"
+  (services_selection)="services_selection($event)"
+></app-salon-list>
+
+<app-services-selection
+  *ngIf="status === 'services_selection'"
+  (services_selection)="services_selection($event)"
+></app-services-selection>
+
+<app-services
+  *ngIf="status === 'services'"
+  (services)="services($event)"
+></app-services>
 
 
-<!--<app-select-specialist></app-select-specialist>-->
-<!--<app-date-time></app-date-time>-->
-<!--<app-record-info></app-record-info>-->
+<app-select-specialist
+  *ngIf="status === 'select_specialist'"
+  (select_specialist)="select_specialist($event)"
+></app-select-specialist>
+
+<app-date-time
+  *ngIf="status === 'date_time'"
+  (date_time)="date_time($event)"
+></app-date-time>
+
+<app-record-info
+  *ngIf="status === 'record_info'"
+  (record_info)="record_info($event)"
+></app-record-info>

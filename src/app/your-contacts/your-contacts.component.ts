@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-your-contacts',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./your-contacts.component.css']
 })
 export class YourContactsComponent implements OnInit {
+  @Output() town_selection = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onNext(town_selection: string) {
+    this.town_selection.emit(town_selection);
   }
 
 }

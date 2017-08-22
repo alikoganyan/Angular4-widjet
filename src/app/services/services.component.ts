@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
-
+  @Output() services = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
 
+  onPreview(services_selection: string) {
+    this.services.emit(services_selection);
+}
+
+  onNext(select_specialist: string) {
+    this.services.emit(select_specialist);
+  }
 }

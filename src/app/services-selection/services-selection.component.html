@@ -1,7 +1,7 @@
 <div class="avisits-basic_background">
   <div class="avisits-main_block">
     <div class="avisits-main_title">
-      <a class="avisits-arrow_back" href="#"></a>
+      <a class="avisits-arrow_back" (click)="onPreview('salon_list')"></a>
       <p>Выбор услуг</p>
       <a class="avisits-close" href="#"></a>
     </div>
@@ -46,7 +46,7 @@
             <p>часа  минут</p>
           </li>
         </ul>
-        <a href="#">Продолжить</a>
+        <a (click)="onNext('services')">Продолжить</a>
         <p>Работает на aVisits.</p>
       </div>
     </div>

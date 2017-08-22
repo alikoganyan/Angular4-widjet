@@ -1,7 +1,7 @@
 <div class="avisits-basic_background">
   <div class="avisits-main_block">
     <div class="avisits-main_title">
-      <a class="avisits-arrow_back" href="#"></a>
+      <a class="avisits-arrow_back" (click)="onPreview('your_contacts')"></a>
       <p>Выбор города</p>
       <a class="avisits-close" href="#"></a>
     </div>
@@ -24,7 +24,7 @@
             <option>казань</option>
           </select>
         </p>
-        <input class="btn-orange" type="submit" value="продолжить">
+        <input class="btn-orange" type="submit" value="продолжить" (click)="onNext('salon_list')">
       </form>
     </div>
   </div>

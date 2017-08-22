@@ -1,13 +1,13 @@
 <div class="avisits-basic_background">
   <div class="avisits-main_block">
     <div class="avisits-main_title">
-        <a class="avisits-arrow_back" href="#"></a>
+        <a class="avisits-arrow_back" (click)="onPreview('services')"></a>
           <p>Выбор специалиста</p>
           <a class="avisits-close" href="#"></a>
       </div>
       <div class="avisits-professional_choice">
         <div class="avisits-row">
-            <a href="#">Любой специалист</a>
+            <a (click)="onNext('date_time')">Любой специалист</a>
           </div>
           <div class="avisits-professional_box">
               <div id="scrollbox">

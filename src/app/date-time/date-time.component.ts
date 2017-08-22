@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-date-time',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./date-time.component.css']
 })
 export class DateTimeComponent implements OnInit {
+  @Output() date_time = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onPreview(select_specialist: string) {
+    this.date_time.emit(select_specialist);
+  }
+
+  onNext(record_info: string) {
+    this.date_time.emit(record_info);
+  }
 }
