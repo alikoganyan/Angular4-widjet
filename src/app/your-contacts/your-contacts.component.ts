@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YourContactsComponent implements OnInit {
 
+  client: Client;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+}
+
+interface Client {
+  phone: string,
+  name: string,
+  email: string  
 }

@@ -9,9 +9,9 @@
       <span>Онлайн запись</span>
       <h2>Ваши контакты</h2>
       <form>
-        <span><input type="tel" placeholder="Ваш телефон"></span>
-        <span><input type="text" placeholder="Ваше имя"></span>
-        <span class="avisits-error"><input type="email" placeholder="client_email@gmail.com"></span>
+        <span><input type="tel" placeholder="Ваш телефон" [(ngModel)]="client.phone"></span>
+        <span><input type="text" placeholder="Ваше имя" [(ngModel)]="client.name"></span>
+        <span class="avisits-error"><input type="email" placeholder="client_email@gmail.com" [(ngModel)]="client.email"></span>
         <input type="submit" value="продолжить">
       </form>
     </div>
