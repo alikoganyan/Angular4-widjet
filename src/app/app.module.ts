@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +14,9 @@ import { SalonListComponent } from './salon-list/salon-list.component';
 import { SelectSpecialistComponent } from './select-specialist/select-specialist.component';
 import { RecordInfoComponent } from './record-info/record-info.component';
 import { DateTimeComponent } from './date-time/date-time.component';
+
+/* Widget sevices */
+import { ClientService } from './widget-services/client.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +32,10 @@ import { DateTimeComponent } from './date-time/date-time.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

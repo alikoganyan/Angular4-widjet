@@ -8,11 +8,11 @@
     <div class="avisits-town_selection avisits-your_contacts">
       <span>Онлайн запись</span>
       <h2>Ваши контакты</h2>
-      <form>
-        <span><input type="tel" placeholder="Ваш телефон" [(ngModel)]="client.phone"></span>
-        <span><input type="text" placeholder="Ваше имя" [(ngModel)]="client.name"></span>
-        <span class="avisits-error"><input type="email" placeholder="client_email@gmail.com" [(ngModel)]="client.email"></span>
-        <input type="submit" value="продолжить" (click)="onNext('town_selection')">
+      <form ngNativeValidate (submit)="onNext('town_selection')">
+        <span><input type="tel" placeholder="Ваш телефон" name="phone" [(ngModel)]="client.phone" required></span>
+        <span><input type="text" placeholder="Ваше имя" name="name" [(ngModel)]="client.name" required></span>
+        <span class="avisits-error"><input type="email" name="email" placeholder="client_email@gmail.com" [(ngModel)]="client.email"></span>
+        <input type="submit" value="продолжить">
       </form>
     </div>
   </div>
