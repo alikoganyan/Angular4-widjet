@@ -7,9 +7,9 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class YourContactsComponent implements OnInit {
   @Output() town_selection = new EventEmitter<string>();
+  client: Client;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -18,4 +18,10 @@ export class YourContactsComponent implements OnInit {
     this.town_selection.emit(town_selection);
   }
 
+}
+
+interface Client {
+  phone: string,
+  name: string,
+  email: string  
 }
