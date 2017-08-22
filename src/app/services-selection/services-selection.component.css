@@ -240,66 +240,6 @@ canvas {
   display:none;
 }
 
-.select_button {
-  background:#fff;
-  width:100%;
-  text-align:center;
-  padding:25px 0 15px;
-  display:none;
-}
-
-.select_button ul {
-  font-size:0;
-  text-align:center;
-}
-
-.select_button li {
-  position:relative;
-  border:1px solid #dadae0;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  width:42.3%;
-  height:60px;
-  font-size:20px;
-  line-height:60px;
-  color:#8e8e93;
-  text-transform:uppercase;
-  margin:0 10px 10px;
-  cursor:pointer;
-  vertical-align:top;
-  display:inline-block;
-}
-
-.select_button li:hover,
-.select_button li.current {
-  background:#fe813e;
-  border-color:#fe813e;
-  color:#fff;
-}
-
-.select_button li:after {
-  background:url(../../assets/images/after1-select_button.png);
-  width:17px;
-  height:10px;
-  content:'';
-  position:absolute;
-  top:26px;
-  left:3.5vw;
-}
-
-.select_button li+li:after {
-  background:url(../../assets/images/after2-select_button.png);
-  width:10px;
-  height:17px;
-  top:22px;
-  left:6vw;
-}
-
-.select_button li+li:hover:after,
-.select_button li+li.current:after {
-  background:url(../../assets/images/after3-select_button.png);
-}
 
 .box.visible {
   display:block;
@@ -1493,7 +1433,3 @@ input[type="checkbox"]:checked + label span {
     opacity:0;
   }
 }
-
-
-
-/*!* MEDIA QUERY HERE *!*/

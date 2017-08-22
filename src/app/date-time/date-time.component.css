@@ -26,6 +26,7 @@
 	font-size:14px;
 	color:#3e3f47;
 	float:right;
+  overflow: auto;
 }
 
 .avisits-main_title {
@@ -1349,8 +1350,8 @@ display
 }
 
 @media (min-width: 280px) and (max-width: 640px) {
-	.avisits-your_contacts input[type="tel"], 
-	.avisits-your_contacts input[type="text"], 
+	.avisits-your_contacts input[type="tel"],
+	.avisits-your_contacts input[type="text"],
 	.avisits-your_contacts input[type="email"] {
 		width:317px;
 		text-align:center;
@@ -1394,14 +1395,14 @@ display
 		width:160px;
 		padding-left:35px;
 	}
-	.avisits-services .avisits-form_top ul li > span, 
+	.avisits-services .avisits-form_top ul li > span,
 	#accordion > li > ul > li > span {
 		width:50px;
 		padding-right:0;
 	}
 	.slick-prev {
 		left:-8px;
-	} 
+	}
 	.slick-next {
 		right:-8px;
 		left:auto;
@@ -1462,8 +1463,8 @@ display
 		position:static;
 		margin-top:15px;
 	}
-	.avisits-your_contacts input[type="tel"], 
-	.avisits-your_contacts input[type="text"], 
+	.avisits-your_contacts input[type="tel"],
+	.avisits-your_contacts input[type="text"],
 	.avisits-your_contacts input[type="email"] {
 		width:265px;
 	}
