@@ -15,10 +15,11 @@ import {SelectSpecialistComponent} from './select-specialist/select-specialist.c
 import {RecordInfoComponent} from './record-info/record-info.component';
 import {DateTimeComponent} from './date-time/date-time.component';
 
-/* Widget sevices */
+/* Widget services */
 import {ClientService} from './widget-services/client.service';
 /* Widget directives */
 import {AccordionServiceDirective} from './directives/accordion.service';
+
 
 @NgModule({
   declarations: [

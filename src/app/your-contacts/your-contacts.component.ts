@@ -9,7 +9,6 @@ export interface Client {
   email: string;
 }
 
-
 @Component({
   selector: 'app-your-contacts',
   templateUrl: './your-contacts.component.html',
@@ -37,9 +36,7 @@ export class YourContactsComponent implements OnInit {
     // }, (error) => {
     //   console.error(error);
     // });
-
   }
 
 }
-
 
