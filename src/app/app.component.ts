@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  status = 'your_contacts';
+  status = 'town_selection';
 
   town_selection(town_selection: string) {
     this.status = town_selection;
