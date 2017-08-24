@@ -14,7 +14,7 @@ export class SelectSpecialistComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPreview(services: string) {
+  onPrevious(services: string) {
     this.select_specialist.emit(services);
   }
 

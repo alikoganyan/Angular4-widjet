@@ -12,7 +12,7 @@ export class RecordInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPreview(date_time: string) {
+  onPrevious(date_time: string) {
     this.record_info.emit(date_time);
 }
 

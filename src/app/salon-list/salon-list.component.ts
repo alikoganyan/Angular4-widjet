@@ -14,7 +14,7 @@ export class SalonListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onpreview(town_selection: string) {
+  onPrevious(town_selection: string) {
     this.services_selection.emit(town_selection);
   }
 

@@ -14,7 +14,7 @@ export class TownSelectionComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPreview(your_contacts: string) {
+  onPrevious(your_contacts: string) {
     this.salon_list.emit(your_contacts);
   }
 

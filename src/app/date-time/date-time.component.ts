@@ -14,7 +14,7 @@ export class DateTimeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPreview(select_specialist: string) {
+  onPrevious(select_specialist: string) {
     this.date_time.emit(select_specialist);
   }
 

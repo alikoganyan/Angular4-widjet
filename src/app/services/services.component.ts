@@ -12,7 +12,7 @@ export class ServicesComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPreview(services_selection: string) {
+  onPrevious(services_selection: string) {
     this.services.emit(services_selection);
 }
 
