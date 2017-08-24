@@ -97,69 +97,17 @@
               <div class="avisits-salon_box">
                   <div id="scrollbox">
                       <ul>
-                          <li>
+                          <li *ngFor="let salon of salons" (click)="onSalonSelect(salon)">
                               <a class="mega__trigger" data-mega="#point1" href="#">
-                                  <div class="avisits-img"><img src="assets/images/salon_box/img1.jpg" alt=""></div>
+                                    <div class="avisits-img">
+                                        <div *ngIf="salon === selectedSalon"></div>
+                                      <img src="{{salon.img}}" alt="">
+                                    </div>
                                   <div class="avisits-text">
-                                      <h4>Непокоренных, 10</h4>
-                                      <p>Площадь мужества</p>
+                                      <h4>{{salon.address}}</h4>
+                                      <p>{{salon.metroAddress}}</p>
                                   </div>
                               </a>
-                          </li>
-                          <li>
-                              <a class="mega__trigger" data-mega="#point2" href="#">
-                                  <div class="avisits-img"><img src="assets/images/salon_box/img2.jpg" alt=""></div>
-                                  <div class="avisits-text">
-                                      <h4>Большая Зеленина, 3</h4>
-                                      <p>Чкаловская</p>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a class="mega__trigger" data-mega="#point3" href="#">
-                                  <div class="avisits-img"><img src="assets/images/salon_box/img3.jpg" alt=""></div>
-                                  <div class="avisits-text">
-                                      <h4>Александра Невского 21 к.2</h4>
-                                      <p>Адмиралтейская</p>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a class="mega__trigger" data-mega="#point4" href="#">
-                                  <div class="avisits-img">
-                                      <div></div>
-                                      <img src="assets/images/salon_box/img4.jpg" alt="">
-                                  </div>
-                                  <div class="avisits-text">
-                                      <h4>Невский проспект, 23</h4>
-                                      <p>Адмиралтейская</p>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a class="mega__trigger" data-mega="#point5" href="#">
-                                  <div class="avisits-img"><img src="assets/images/salon_box/img5.jpg" alt=""></div>
-                                  <div class="avisits-text">
-                                      <h4>Непокоренных, 10</h4>
-                                      <p>Площадь мужества</p>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <a class="mega__trigger" data-mega="#point6" href="#">
-                                  <div class="avisits-img"><img src="assets/images/salon_box/img6.jpg" alt=""></div>
-                                  <div class="avisits-text">
-                                      <h4>Непокоренных, 10</h4>
-                                      <p>Площадь мужества</p>
-                                  </div>
-                              </a>
-                          </li>
-                          <li>
-                              <div class="avisits-img"><img src="assets/images/salon_box/img7.jpg" alt=""></div>
-                              <div class="avisits-text">
-                                  <h4>Большая Зеленина, 3</h4>
-                                  <p>Чкаловская</p>
-                              </div>
                           </li>
                       </ul>
                   </div>

@@ -17,6 +17,8 @@ import {DateTimeComponent} from './date-time/date-time.component';
 
 /* Widget services */
 import {ClientService} from './widget-services/client.service';
+import { SalonService } from './widget-services/salon.service';
+
 /* Widget directives */
 import {AccordionServiceDirective} from './directives/accordion.service';
 
@@ -39,7 +41,7 @@ import {AccordionServiceDirective} from './directives/accordion.service';
     FormsModule,
     HttpModule
   ],
-  providers: [ClientService],
+  providers: [ClientService, SalonService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
