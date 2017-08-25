@@ -8,26 +8,9 @@
     <div class="avisits-services avisits-services_sel">
       <div id="scrollbox">
         <ul>
-          <li><a href="#">Парикмахерские услуги<span>1</span></a></li>
-          <li><a href="#">Уход за руками и ногами</a></li>
-          <li><a href="#">Косметология</a></li>
-          <li><a href="#">Визаж</a></li>
-          <li><a href="#">Солярий</a></li>
-          <li><a href="#">Парикмахерские услуги</a></li>
-          <li><a href="#">Уход за руками и ногами</a></li>
-          <li><a href="#">Косметология</a></li>
-          <li><a href="#">Визаж</a></li>
-          <li><a href="#">Солярий</a></li>
-          <li><a href="#">Парикмахерские услуги</a></li>
-          <li><a href="#">Уход за руками и ногами</a></li>
-          <li><a href="#">Косметология</a></li>
-          <li><a href="#">Визаж</a></li>
-          <li><a href="#">Солярий</a></li>
-          <li><a href="#">Парикмахерские услуги</a></li>
-          <li><a href="#">Уход за руками и ногами</a></li>
-          <li><a href="#">Косметология</a></li>
-          <li><a href="#">Визаж</a></li>
-          <li><a href="#">Солярий</a></li>
+          <li *ngFor="let service of services" (click)="onServiceSelect(service)">
+            <a>{{service.name}}<span *ngIf="service === selectedService">v</span></a>
+          </li>
         </ul>
       </div>
       <div class="avisits-row">

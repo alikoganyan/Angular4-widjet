@@ -98,7 +98,7 @@
                   <div id="scrollbox">
                       <ul>
                           <li *ngFor="let salon of salons" (click)="onSalonSelect(salon)">
-                              <a class="mega__trigger" data-mega="#point1" href="#">
+                              <a class="mega__trigger" data-mega="#point1">
                                     <div class="avisits-img">
                                         <div *ngIf="salon === selectedSalon"></div>
                                       <img src="{{salon.img}}" alt="">
@@ -114,7 +114,7 @@
              </div>
         </div>
           <div class="avisits-salon_buttons">
-            <a (click)="onNext('services_selection')">Продолжить</a>
+            <a (click)="onNext('services_selection')" *ngIf="selectedSalon">Продолжить</a>
             <p>Работает на aVisits.</p>
           </div>
       </div>

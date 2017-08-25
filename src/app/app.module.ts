@@ -1,11 +1,11 @@
+/* Widget models */
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
-import {AppComponent} from './app.component';
-
 /* Widget components */
+import {AppComponent} from './app.component';
 import {YourContactsComponent} from './your-contacts/your-contacts.component';
 import {ServicesSelectionComponent} from './services-selection/services-selection.component';
 import {ServicesComponent} from './services/services.component';
@@ -17,7 +17,9 @@ import {DateTimeComponent} from './date-time/date-time.component';
 
 /* Widget services */
 import {ClientService} from './widget-services/client.service';
-import { SalonService } from './widget-services/salon.service';
+import {SalonService} from './widget-services/salon.service';
+import {CityService} from './widget-services/city.service';
+import {ServiceSelectionService} from './widget-services/serviceSelection.service';
 
 /* Widget directives */
 import {AccordionServiceDirective} from './directives/accordion.service';
@@ -41,7 +43,12 @@ import {AccordionServiceDirective} from './directives/accordion.service';
     FormsModule,
     HttpModule
   ],
-  providers: [ClientService, SalonService],
+  providers: [
+    ClientService,
+    SalonService,
+    CityService,
+    ServiceSelectionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

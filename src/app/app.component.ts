@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {Salon} from './interfaces/salon';
+import {ServiceSelection} from './interfaces/service-selection';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,10 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   status = 'town_selection';
+  streetIdInSalon: number;
+  selectedSalon: Salon;
+  selectedService: ServiceSelection;
+
 
   town_selection(town_selection: string) {
     this.status = town_selection;
@@ -35,4 +41,18 @@ export class AppComponent {
   record_info(record_info: string) {
     this.status = record_info;
   }
+
+
+  getStreetId(id: number) {
+    this.streetIdInSalon = id;
+  }
+
+  onSelectedSalon(salon: Salon) {
+    this.selectedSalon = salon;
+  }
+
+  onSelectedService(service) {
+    this.selectedService = service;
+  }
+
 }

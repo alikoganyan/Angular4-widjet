@@ -6,21 +6,27 @@
 <app-town-selection
   *ngIf="status === 'town_selection'"
   (salon_list)="salon_list($event)"
+  (streetIdInSalons)="getStreetId($event)"
 ></app-town-selection>
 
 <app-salon-list
   *ngIf="status === 'salon_list'"
   (services_selection)="services_selection($event)"
+  [streetId]="streetIdInSalon"
+  (onSelectedSalon)="onSelectedSalon($event)"
 ></app-salon-list>
 
 <app-services-selection
   *ngIf="status === 'services_selection'"
   (services_selection)="services_selection($event)"
+  [salon]="selectedSalon"
+  (onSelectedService)="onSelectedService($event)"
 ></app-services-selection>
 
 <app-services
   *ngIf="status === 'services'"
   (services)="services($event)"
+  [service]="selectedService"
 ></app-services>
 
 

@@ -10,30 +10,29 @@
       <h2>Выберите город</h2>
       <form>
         <p>
-          <select>
-            <option>москва</option>
-            <option>москва2</option>
-            <option>москва3</option>
-            <option>москва4</option>
+          <select title="" #selectCity (change)="getSubCities(selectCity.value)">
+            <option [value]="-1"> - - Выбирайте город - - </option>
+            <option [value]="city.id" *ngFor="let city of cities">{{city.name}}</option>
           </select>
         </p>
-        <p>
-          <select>
-            <option >санкт-петербург</option>
-            <option>санкт-петербург2</option>
-            <option>санкт-петербург3</option>
-            <option>санкт-петербург4</option>
+        <p *ngIf="cityId > 0">
+          <select title="" #selectSubCity (change)="getStreets(selectSubCity.value)">
+            <option [value]="-1"> - - Выбирайте район - - </option>
+            <option *ngFor="let subCity of subCities" [value]="subCity.id">{{subCity.name}}</option>
           </select>
         </p>
-        <p>
-          <select>
-            <option>казань</option>
-            <option>казань2</option>
-            <option>казань3</option>
-            <option>казань4</option>
+        <p *ngIf="cityId > 0 && subCityId > 0">
+          <select title="" #selectStreet (change)="getStreetID(selectStreet.value)">
+            <option [value]="-1">- - Выбирайте улицу - -</option>
+            <option *ngFor="let street of streets" [value]="street.id">{{street.name}}</option>
           </select>
         </p>
-        <input class="btn-orange" type="submit" value="продолжить" (click)="onNext('salon_list')">
+        <input
+          class="btn-orange"
+          type="button"
+          value="продолжить"
+          (click)="onNext('salon_list')"
+          *ngIf="streetId > 0">
       </form>
     </div>
   </div>

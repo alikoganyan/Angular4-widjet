@@ -1,68 +1,32 @@
 import {Injectable} from '@angular/core';
 import {Headers, Http} from '@angular/http';
-
-import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import {SALONS} from '../DataBase/cities/Db-city';
+import {Salon} from '../interfaces/salon';
 
 @Injectable()
 export class SalonService {
 
-  salons = [
-    {
-      id: 1,
-      img: "assets/images/salon_box/img1.jpg",
-      address: "Непокоренных, 10",
-      metroAddress: "Площадь мужества"
-    },
-    {
-      id: 2,
-      img: "assets/images/salon_box/img2.jpg",
-      address: "Большая Зеленина, 3",
-      metroAddress: "Чкаловская"
-    },
-    {
-      id: 3,
-      img: "assets/images/salon_box/img3.jpg",
-      address: "Александра Невского 21 к.2",
-      metroAddress: "Адмиралтейская"
-    },
-    {
-      id: 4,
-      img: "assets/images/salon_box/img4.jpg",
-      address: "Невский проспект, 23",
-      metroAddress: "Адмиралтейская"
-    },
-    {
-      id: 5,
-      img: "assets/images/salon_box/img5.jpg",
-      address: "Непокоренных, 10",
-      metroAddress: "Площадь мужества"
-    },
-    {
-      id: 5,
-      img: "assets/images/salon_box/img6.jpg",
-      address: "СНепокоренных, 10",
-      metroAddress: "Площадь мужества"
-    },
-    {
-      id: 5,
-      img: "assets/images/salon_box/img7.jpg",
-      address: "СНепокоренных, 10",
-      metroAddress: "Площадь мужества"
-    },
 
-  ];
+  constructor(private http: Http) {
+  }
 
-  constructor(private http: Http) { }
 
-  getSalons() {
+  getSalons(id: number) {
     const headers = new Headers();
     headers.set('Content-Type', 'application/json');
     headers.set('Authorization', 'Basic ZW1haWxAZG9tYWluLmNvbToxMjM0NTY=');
 
-    //return this.http.get('http://avisits.com:8080/api/salons', {headers: headers})
-    //.map(response => response.json().data);
-    return this.salons;
+    const salons: Salon[] = [];
+
+    for (let i = 0; i < SALONS.length; ++i) {
+      if (SALONS[i].sub_city_id == id) {
+        salons.push(SALONS[i]);
+      }
+    }
+    // return this.http.get('http://avisits.com:8080/api/salons', {headers: headers})
+    // .map(response => response.json().data);
+    return salons;
   }
 
 }
