@@ -11,9 +11,12 @@ export class DateTimeComponent implements OnInit {
   constructor() {
   }
 
+
   ngOnInit() {
   }
 
+
+  /* NAVIGATE */
   onPrevious(select_specialist: string) {
     this.date_time.emit(select_specialist);
   }

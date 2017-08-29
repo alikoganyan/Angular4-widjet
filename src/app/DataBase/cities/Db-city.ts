@@ -4,6 +4,7 @@ import {Street} from '../../interfaces/street';
 import {Salon} from '../../interfaces/salon';
 import {ServiceSelection} from '../../interfaces/service-selection';
 import {SubServiceSelection} from '../../interfaces/sub-service-selection';
+import {Specialist} from '../../interfaces/specialist';
 
 export const CITIES: City[] = [
   {id: 1, name: 'Москва'},
@@ -151,4 +152,55 @@ export const SUB_SERVICE_SELECTION: SubServiceSelection[] = [
 ];
 
 
+export const SPECIALISTS: Specialist[] = [
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 1,
+    name: 'Сергеева Анна',
+    img: 'assets/images/professional_choice/img1.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 1,
+    name: 'Екатерина Яковлева',
+    img: 'assets/images/professional_choice/img2.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 1,
+    name: 'Анастасия Бровко',
+    img: 'assets/images/professional_choice/img3.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 1,
+    name: 'Юлия Ларина',
+    img: 'assets/images/professional_choice/img4.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 2,
+    name: 'Юлия Ларина',
+    img: 'assets/images/professional_choice/img4.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 2,
+    name: 'Анастасия Бровко',
+    img: 'assets/images/professional_choice/img3.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 2,
+    name: 'Сергеева Анна',
+    img: 'assets/images/professional_choice/img1.jpg'
+  },
+  {
+    profession: 'Парикмахер-стилист',
+    salon_id: 2,
+    name: 'Екатерина Яковлева',
+    img: 'assets/images/professional_choice/img2.jpg'
+  }
+];
 
+ // export const RECORD_INFO = [];

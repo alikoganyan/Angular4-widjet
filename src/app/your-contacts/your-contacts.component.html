@@ -1,18 +1,27 @@
 <div class="avisits-basic_background">
   <div class="avisits-main_block">
     <div class="avisits-main_title">
-      <a class="avisits-arrow_back" href="#"></a>
+      <!--<a class="avisits-arrow_back" href="#"></a>-->
       <p>Ваши контакты</p>
       <a class="avisits-close"></a>
     </div>
     <div class="avisits-town_selection avisits-your_contacts">
       <span>Онлайн запись</span>
       <h2>Ваши контакты</h2>
-      <form ngNativeValidate (submit)="onNext('town_selection')">
-        <span><input type="tel" placeholder="Ваш телефон" name="phone" [(ngModel)]="client.phone" required></span>
-        <span><input type="text" placeholder="Ваше имя" name="name" [(ngModel)]="client.name" required></span>
-        <span class="avisits-error"><input type="email" name="email" placeholder="client_email@gmail.com" [(ngModel)]="client.email"></span>
-        <input type="submit" value="продолжить">
+      <form (ngSubmit)="onSignup(f,'town_selection')" #f="ngForm" ngNativeValidate>
+        <span>
+          <input
+            type="tel"
+            placeholder="Ваш телефон"
+            name="phone"
+            pattern=""
+            ngModel required />
+        </span>
+        <span><input type="text" placeholder="Ваше имя" name="name" ngModel required /></span>
+        <span class="avisits-error">
+          <input type="email" name="email" placeholder="client_email@gmail.com" ngModel required />
+        </span>
+        <input type="submit" value="продолжить" />
       </form>
     </div>
   </div>

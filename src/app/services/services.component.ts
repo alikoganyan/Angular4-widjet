@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ServiceSelectionService} from '../widget-services/serviceSelection.service';
 import {SubServiceSelection} from '../interfaces/sub-service-selection';
 import {ServiceSelection} from '../interfaces/service-selection';
+import {RecordInfoService} from "../widget-services/record-info.service";
 
 @Component({
   selector: 'app-services',
@@ -12,32 +13,57 @@ export class ServicesComponent implements OnInit {
   @Output() services = new EventEmitter<string>();
   @Input() service: ServiceSelection;
   subServices: SubServiceSelection[];
-  isChecked = false;
+  selectedServices: SubServiceSelection[] = [];
 
   price = 0;
+  hour = 0;
+  min = 0;
+  time = 0;
+  count = 0;
 
-  constructor(private serviceSelectionService: ServiceSelectionService) {
+  constructor(private serviceSelectionService: ServiceSelectionService,
+              private recordInfoService: RecordInfoService) {
   }
 
   ngOnInit() {
     this.getSubServices();
+    this.recordInfoService.getSubServices.emit(this.selectedServices);
   }
 
   getSubServices() {
-    this.subServices = this.serviceSelectionService.getSubServices(this.service.id);
-    console.log(this.subServices);
+    // this.subServices = this.serviceSelectionService.getSubServices(this.service.id);
+    this.subServices = this.serviceSelectionService.getSubServices(1);
   }
 
-  selectedServices(hour: number, min: number, price: number) {
-    this.isChecked = !this.isChecked;
+  onSelectedServices(event, subService: SubServiceSelection) {
 
-    // if (this.isChecked) {
-      this.price = this.price + price;
-    // } else {
-    //   this.price = this.price - price;
-    // }
-    console.log(this.price);
+
+    if (event.target.checked) {
+      this.count++;
+      this.price = this.price + subService.price;
+      this.time = this.time + (subService.hour * 60) + subService.min;
+      this.selectedServices.push(subService);
+    } else {
+      this.count--;
+      this.price = this.price - subService.price;
+      this.time = this.time - (subService.hour * 60) - subService.min;
+
+
+      const position = this.selectedServices.findIndex(
+        (sb: SubServiceSelection) => {
+          return sb.id === subService.id;
+        });
+      this.selectedServices.splice(position, 1);
+    }
+
+    this.hour = Math.floor(this.time / 60);
+    this.min = ((this.time / 60) - this.hour) * 60;
+    console.log(this.selectedServices);
   }
+
+
+
+
 
 
   /* NAVIGATE */

@@ -1,46 +1,49 @@
-<app-your-contacts
-  *ngIf="status === 'your_contacts'"
-  (town_selection)="town_selection($event)"
-></app-your-contacts>
+  <app-your-contacts
+    *ngIf="status === 'your_contacts'"
+    (town_selection)="navigate($event)"
+  ></app-your-contacts>
 
-<app-town-selection
-  *ngIf="status === 'town_selection'"
-  (salon_list)="salon_list($event)"
-  (streetIdInSalons)="getStreetId($event)"
-></app-town-selection>
+  <app-town-selection
+    *ngIf="status === 'town_selection'"
+    (salon_list)="navigate($event)"
+    (streetIdInSalons)="getStreetId($event)"
+  ></app-town-selection>
 
-<app-salon-list
-  *ngIf="status === 'salon_list'"
-  (services_selection)="services_selection($event)"
-  [streetId]="streetIdInSalon"
-  (onSelectedSalon)="onSelectedSalon($event)"
-></app-salon-list>
+  <app-salon-list
+    *ngIf="status === 'salon_list'"
+    (services_selection)="navigate($event)"
+    [streetId]="streetIdInSalon"
+    (onSelectedSalon)="onSelectedSalon($event)"
+  ></app-salon-list>
 
-<app-services-selection
-  *ngIf="status === 'services_selection'"
-  (services_selection)="services_selection($event)"
-  [salon]="selectedSalon"
-  (onSelectedService)="onSelectedService($event)"
-></app-services-selection>
+  <app-services-selection
+    *ngIf="status === 'services_selection'"
+    (services_selection)="navigate($event)"
+    [salon]="selectedSalon"
+    (onSelectedService)="onSelectedService($event)"
+  ></app-services-selection>
 
-<app-services
-  *ngIf="status === 'services'"
-  (services)="services($event)"
-  [service]="selectedService"
-></app-services>
+  <app-services
+    *ngIf="status === 'services'"
+    (services)="navigate($event)"
+    [service]="selectedService"
+  ></app-services>
 
 
-<app-select-specialist
-  *ngIf="status === 'select_specialist'"
-  (select_specialist)="select_specialist($event)"
-></app-select-specialist>
+  <app-select-specialist
+    *ngIf="status === 'select_specialist'"
+    (select_specialist)="navigate($event)"
+    [salon]="selectedSalon"
+  ></app-select-specialist>
 
-<app-date-time
-  *ngIf="status === 'date_time'"
-  (date_time)="date_time($event)"
-></app-date-time>
+  <app-date-time
+    *ngIf="status === 'date_time'"
+    (date_time)="navigate($event)"
+  ></app-date-time>
 
-<app-record-info
-  *ngIf="status === 'record_info'"
-  (record_info)="record_info($event)"
-></app-record-info>
+  <app-record-info
+    *ngIf="status === 'record_info'"
+    (record_info)="navigate($event)"
+  ></app-record-info>
+
+

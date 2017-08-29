@@ -20,6 +20,8 @@ import {ClientService} from './widget-services/client.service';
 import {SalonService} from './widget-services/salon.service';
 import {CityService} from './widget-services/city.service';
 import {ServiceSelectionService} from './widget-services/serviceSelection.service';
+import {SpecialistService} from './widget-services/specialist.service';
+import {RecordInfoService} from './widget-services/record-info.service';
 
 /* Widget directives */
 import {AccordionServiceDirective} from './directives/accordion.service';
@@ -44,10 +46,12 @@ import {AccordionServiceDirective} from './directives/accordion.service';
     HttpModule
   ],
   providers: [
+    CityService,
     ClientService,
     SalonService,
-    CityService,
-    ServiceSelectionService
+    SpecialistService,
+    ServiceSelectionService,
+    RecordInfoService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output, DoCheck} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CityService} from '../widget-services/city.service';
 import {SalonService} from '../widget-services/salon.service';
 import {City} from '../interfaces/city';
@@ -10,7 +10,7 @@ import {Street} from '../interfaces/street';
   templateUrl: './town-selection.component.html',
   styleUrls: ['./town-selection.component.css']
 })
-export class TownSelectionComponent implements OnInit, DoCheck {
+export class TownSelectionComponent implements OnInit {
   @Output() salon_list = new EventEmitter<string>();
   @Output() streetIdInSalons = new EventEmitter<number>();
 
@@ -30,9 +30,6 @@ export class TownSelectionComponent implements OnInit, DoCheck {
     this.getCities();
   }
 
-  ngDoCheck() {
-
-  }
 
   /* CITY */
   getCities(): void {

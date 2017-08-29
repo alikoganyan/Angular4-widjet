@@ -1,13 +1,10 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
+import {RecordInfoService} from '../widget-services/record-info.service';
 import {ClientService} from '../widget-services/client.service';
+import {Client} from '../interfaces/client';
 
-export interface Client {
-  id: number;
-  phone: string;
-  name: string;
-  email: string;
-}
 
 @Component({
   selector: 'app-your-contacts',
@@ -16,27 +13,36 @@ export interface Client {
 })
 export class YourContactsComponent implements OnInit {
   @Output() town_selection = new EventEmitter<string>();
-  client: Client = {
-    id: null,
-    phone: '',
-    name: '',
-    email: ''
-  };
+  client: Client;
 
-  constructor(private clientService: ClientService) {
+
+  constructor(private clientService: ClientService,
+              private recordInfoService: RecordInfoService) {
+    this.client = new Client();
+  }
+
+
+
+  onSignup(form: NgForm, town_selection: string) {
+    this.town_selection.emit(town_selection);
+    this.client.email = form.value.email;
+    this.client.name = form.value.name;
+    this.client.phone = form.value.phone;
+    console.log(this.client);
   }
 
   ngOnInit() {
+    this.recordInfoService.clientGet.emit(this.client);
   }
 
-  onNext(town_selection: string) {
-    this.town_selection.emit(town_selection);
-    // this.clientService.create(this.client).subscribe((savedClient) => {
-    //   console.log(savedClient);
-    // }, (error) => {
-    //   console.error(error);
-    // });
-  }
+  // onNext(town_selection: string) {
+  //   this.town_selection.emit(town_selection);
+  //   // this.clientService.create(this.client).subscribe((savedClient) => {
+  //   //   console.log(savedClient);
+  //   // }, (error) => {
+  //   //   console.error(error);
+  //   // });
+  // }
 
 }
 

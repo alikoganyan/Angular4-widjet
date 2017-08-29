@@ -3,7 +3,7 @@
     <div class="avisits-main_title">
         <a class="avisits-arrow_back" (click)="onPrevious('date_time')"></a>
           <p>Информация о записи</p>
-          <a class="avisits-close" href="#"></a>
+          <a class="avisits-close"></a>
       </div>
       <div class="avisits-information">
         <div class="avisits-ready">
@@ -32,16 +32,16 @@
           <div class="avisits-specialist">
             <h3>Специалист</h3>
               <div class="visits-special-ava">
-                <div><img src="assets/images/content/img-special.jpg" alt=""></div>
-                  <h4>Екатерина Яковлева</h4>
-                  <p>Парикмахер-стилист</p>
+                <div><img [src]="recordInfo.specialist.img" alt=""></div>
+                  <h4>{{recordInfo.specialist.name}}</h4>
+                  <p>{{recordInfo.specialist.profession}}</p>
               </div>
           </div>
           <div class="avisits-contact-info">
             <h3>ваша контактная информация</h3>
               <div>
-                <p>Максим Александрович</p>
-                  <span>8 (905) 222-77-11<a href="#">plyyyy@gmail.com</a></span>
+                <p>{{recordInfo.client.name}}</p>
+                  <span>{{recordInfo.client.phone}}<a href="#">{{recordInfo.client.email}}</a></span>
               </div>
           </div>
       </div>

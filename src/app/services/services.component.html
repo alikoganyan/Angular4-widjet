@@ -2,7 +2,7 @@
   <div class="avisits-main_block">
     <div class="avisits-main_title">
       <a class="avisits-arrow_back" (click)="onPrevious('services_selection')"></a>
-      <p>{{service.name}}</p>
+      <!--<p>{{service.name}}</p>-->
       <a class="avisits-close" href="#"></a>
     </div>
     <div class="avisits-services">
@@ -11,28 +11,18 @@
           <ul>
             <li *ngFor="let subService of subServices; let i = index">
               <div class="avisits-box">
-                <input type="checkbox" id="c{{i}}" name="cc" [value]="subService.id"  (change)="selectedServices(subService.hour, subService.min, subService.price)" />
+                <input
+                  type="checkbox"
+                  id="c{{i}}"
+                  name="cc"
+                  [value]="subService.id"
+                  (change)="onSelectedServices($event, subService)"
+                />
                 <label for="c{{i}}"><span></span>{{subService.name}}</label>
               </div>
               <span>{{subService.hour}}ч <span>{{subService.min}}м</span></span>
               <p>{{subService.price}}р</p>
             </li>
-            <!--<li>-->
-            <!--<div class="avisits-box">-->
-            <!--<input type="checkbox" id="c2" name="cc"/>-->
-            <!--<label for="c2"><span></span>Стрижка</label>-->
-            <!--</div>-->
-            <!--<span>45м</span>-->
-            <!--<p>900р</p>-->
-            <!--</li>-->
-            <!--<li>-->
-            <!--<div class="avisits-box">-->
-            <!--<input type="checkbox" id="c3" name="cc"/>-->
-            <!--<label for="c3"><span></span>Окрашивание волос</label>-->
-            <!--</div>-->
-            <!--<span>1ч 45м</span>-->
-            <!--<p>900р</p>-->
-            <!--</li>-->
           </ul>
         </form>
       </div>
@@ -193,19 +183,19 @@
         <h3>Добавлено</h3>
         <ul>
           <li>
-            <div><i class="icon_ser"></i><strong>3</strong></div>
+            <div><i class="icon_ser"></i><strong>{{count}}</strong></div>
             <p>услуги</p>
           </li>
           <li>
-            <div><i class="icon_pri"></i><strong>4 900</strong></div>
+            <div><i class="icon_pri"></i><strong>{{price}}</strong></div>
             <p>рублей</p>
           </li>
           <li>
-            <div><i class="map icon_clock"></i><strong>4 15</strong></div>
+            <div><i class="map icon_clock"></i><strong>{{hour}} {{min}}</strong></div>
             <p>часа минут</p>
           </li>
         </ul>
-        <a (click)="onNext('select_specialist')">Продолжить</a>
+        <a (click)="onNext('select_specialist')" *ngIf="count > 0">Продолжить</a>
         <p>Работает на aVisits.</p>
       </div>
     </div>
