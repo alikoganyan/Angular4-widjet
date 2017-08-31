@@ -28,11 +28,10 @@ export class YourContactsComponent implements OnInit {
     this.client.email = form.value.email;
     this.client.name = form.value.name;
     this.client.phone = form.value.phone;
-    console.log(this.client);
+    this.recordInfoService.getClient(this.client);
   }
 
   ngOnInit() {
-    this.recordInfoService.clientGet.emit(this.client);
   }
 
   // onNext(town_selection: string) {

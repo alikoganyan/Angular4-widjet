@@ -449,7 +449,9 @@ input[type="checkbox"]:checked + label span {
 }
 
 
-
+agm-map {
+  height: 300px;
+}
 
 
 

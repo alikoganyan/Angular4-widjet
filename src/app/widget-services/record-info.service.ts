@@ -1,11 +1,25 @@
-import {EventEmitter} from '@angular/core';
 import {Client} from '../interfaces/client';
 import {Specialist} from '../interfaces/specialist';
+import {SubServiceSelection} from '../interfaces/sub-service-selection';
+
 
 export class RecordInfoService {
 
-  clientGet = new EventEmitter<Client>();
-  getSubServices = new EventEmitter<any>();
-  specialist = new EventEmitter<Specialist>();
 
+  client: Client;
+  specialist: Specialist;
+  services: SubServiceSelection[];
+
+
+  getSpecialist(specialist: Specialist) {
+    this.specialist = specialist;
+  }
+
+  getClient(client: Client) {
+    this.client = client;
+  }
+
+  getServices(services: SubServiceSelection[]) {
+    this.services = services;
+  }
 }

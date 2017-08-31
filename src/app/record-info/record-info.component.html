@@ -12,20 +12,10 @@
           <div class="avisits-ser">
             <h3>Услуги</h3>
               <ul>
-                <li>
-                    <p>Стрижка горячими ножницами</p>
-                      <span>1ч 20м</span>
-                      <strong>2 000р</strong>
-                  </li>
-                  <li>
-                    <p>Стрижка</p>
-                      <span>45м</span>
-                      <strong>900р</strong>
-                  </li>
-                  <li>
-                    <p>Окрашивание волос</p>
-                      <span>1ч 40м</span>
-                      <strong>2 000р</strong>
+                <li *ngFor="let service of recordInfo.services">
+                    <p>{{service.name}}</p>
+                      <span>{{service.hour}}ч {{service.min}}м</span>
+                      <strong>{{service.price}}р</strong>
                   </li>
               </ul>
           </div>

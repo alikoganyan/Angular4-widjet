@@ -24,8 +24,8 @@ export class ServicesSelectionComponent implements OnInit {
   }
 
   getServices() {
-    // this.services = this.serviceSelectionService.getServices(this.salon.id);
-    this.services = this.serviceSelectionService.getServices(1);
+    this.services = this.serviceSelectionService.getServices(this.salon.id);
+    // this.services = this.serviceSelectionService.getServices(1);
   }
 
   onServiceSelect(service: ServiceSelection) {

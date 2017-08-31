@@ -4,6 +4,9 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
+import { AgmCoreModule } from '@agm/core';
+import { CommonModule } from '@angular/common';
+
 /* Widget components */
 import {AppComponent} from './app.component';
 import {YourContactsComponent} from './your-contacts/your-contacts.component';
@@ -43,7 +46,11 @@ import {AccordionServiceDirective} from './directives/accordion.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBiwMzlWDUWOtkaluYMGQFHKFNc3ONeL2c'
+    })
   ],
   providers: [
     CityService,

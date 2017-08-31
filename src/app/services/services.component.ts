@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ServiceSelectionService} from '../widget-services/serviceSelection.service';
 import {SubServiceSelection} from '../interfaces/sub-service-selection';
 import {ServiceSelection} from '../interfaces/service-selection';
-import {RecordInfoService} from "../widget-services/record-info.service";
+import {RecordInfoService} from '../widget-services/record-info.service';
 
 @Component({
   selector: 'app-services',
@@ -27,16 +27,14 @@ export class ServicesComponent implements OnInit {
 
   ngOnInit() {
     this.getSubServices();
-    this.recordInfoService.getSubServices.emit(this.selectedServices);
   }
 
   getSubServices() {
-    // this.subServices = this.serviceSelectionService.getSubServices(this.service.id);
-    this.subServices = this.serviceSelectionService.getSubServices(1);
+    this.subServices = this.serviceSelectionService.getSubServices(this.service.id);
+    // this.subServices = this.serviceSelectionService.getSubServices(1);
   }
 
   onSelectedServices(event, subService: SubServiceSelection) {
-
 
     if (event.target.checked) {
       this.count++;
@@ -62,10 +60,6 @@ export class ServicesComponent implements OnInit {
   }
 
 
-
-
-
-
   /* NAVIGATE */
   onPrevious(services_selection: string) {
     this.services.emit(services_selection);
@@ -73,6 +67,7 @@ export class ServicesComponent implements OnInit {
 
   onNext(select_specialist: string) {
     this.services.emit(select_specialist);
+    this.recordInfoService.getServices(this.selectedServices);
   }
 
 }

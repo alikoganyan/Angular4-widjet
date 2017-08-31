@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SpecialistService} from '../widget-services/specialist.service';
 import {Specialist} from '../interfaces/specialist';
 import {Salon} from '../interfaces/salon';
-import {RecordInfoService} from "../widget-services/record-info.service";
+import {RecordInfoService} from '../widget-services/record-info.service';
 
 @Component({
   selector: 'app-select-specialist',
@@ -21,18 +21,17 @@ export class SelectSpecialistComponent implements OnInit {
 
   ngOnInit() {
     this.getSpecialists();
-    this.recordInfoService.specialist.emit(this.selectedSpecialist);
   }
 
   getSpecialists() {
-    // this.specialists = this.specialistService.getSpecialists(this.salon.id);
-    this.specialists = this.specialistService.getSpecialists(1);
-    console.log(this.specialists);
+    this.specialists = this.specialistService.getSpecialists(this.salon.id);
+    // this.specialists = this.specialistService.getSpecialists(1);
   }
 
   selectSpecialist(specialist) {
     this.selectedSpecialist = specialist;
-    console.log(this.selectedSpecialist);
+    console.log(specialist);
+   this.recordInfoService.getSpecialist(specialist);
   }
 
 

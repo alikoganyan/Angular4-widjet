@@ -15,25 +15,44 @@ export class SalonListComponent implements OnInit {
   salons: Salon[] = [];
   selectedSalon: Salon;
 
+  lat = 55.73;
+  lng = 37.53;
+  zoom = 11;
+
   constructor(private salonService: SalonService, private serviceSelectionService: ServiceSelectionService) {
   }
 
   ngOnInit() {
-    // To be changes in future to get salons from service
     this.getSalons();
   }
 
   onSalonSelect(salon: Salon) {
     this.selectedSalon = salon;
     this.onSelectedSalon.emit(salon);
-    console.log(salon);
   }
 
 
   getSalons() {
     this.salons = this.salonService.getSalons(this.streetId);
+    // this.salons = this.salonService.getSalons(1);
   }
 
+
+  /* GOOGLE MAP */
+  markers: any = [
+    {
+      lat: 55.732,
+      lng: 37.552
+    },
+    {
+      lat: 55.734,
+      lng: 37.556
+    },
+    {
+      lat: 55.736,
+      lng: 37.59
+    }
+  ];
 
   /* NAVIGATE */
   onPrevious(town_selection: string) {

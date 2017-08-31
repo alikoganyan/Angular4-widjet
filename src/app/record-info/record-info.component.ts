@@ -15,24 +15,13 @@ export class RecordInfoComponent implements OnInit {
   recordInfo: RecordInfo;
 
   constructor(private recordInfoService: RecordInfoService) {
+    this.recordInfo = new RecordInfo;
   }
 
   ngOnInit() {
-    this.recordInfoService.clientGet.subscribe(
-      (client: Client) => {
-        this.recordInfo.client = client;
-      }
-    );
-    this.recordInfoService.getSubServices.subscribe(
-      (subservices: any) => {
-        this.recordInfo.services = subservices;
-      }
-    );
-    this.recordInfoService.specialist.subscribe(
-      (specialist: Specialist) => {
-        this.recordInfo.specialist = specialist;
-      }
-    );
+    this.recordInfo.client = this.recordInfoService.client;
+    this.recordInfo.specialist = this.recordInfoService.specialist;
+    this.recordInfo.services = this.recordInfoService.services;
   }
 
 

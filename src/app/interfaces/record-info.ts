@@ -3,7 +3,7 @@ import {Specialist} from './specialist';
 import {Client} from './client';
 
 export class RecordInfo {
-  services: SubServiceSelection;
+  services: SubServiceSelection[];
   specialist: Specialist;
   client: Client;
 }
